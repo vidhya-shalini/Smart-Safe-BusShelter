@@ -18,7 +18,7 @@ IoT Data: Firebase (for real-time sensor values)
 
 #  How to Run
 Clone the repository
-git clone https://github.com/your-username/smart-safe-shelter.git
+git clone https://github.com/vidhya-shalini/smart-safe-shelter.git
 cd smart-safe-shelter
 Open index.html in your browser.
 (For geolocation, use a local server: http-server . or python -m http.server)
