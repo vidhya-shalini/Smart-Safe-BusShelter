@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Safe Shelter — Real Demo</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SS</div>
+      <div class="brand-text">
+        <div class="title">Smart Safe Shelter</div>
+        <div class="subtitle">Map • Bus Tracking • SOS</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="btnRecenter" class="btn">📍 My Location</button>
+      <button id="btnNearbyPolice" class="btn">🚓 Nearby Police</button>
+      <button id="btnTrackBus" class="btn">🚌 Track Bus</button>
+      <button id="btnSOS" class="btn btn-danger">🚨 SOS</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="card">
+        <h3>Shelter Status</h3>
+        <div class="row"><span>Solar Charge</span><strong id="chg">80%</strong></div>
+        <div class="progress"><div id="chgbar" class="bar" style="width:80%"></div></div>
+        <div class="row"><span>Light</span><span id="lightState">ON</span></div>
+        <div class="row"><span>Water</span><span id="waterState">Enabled</span></div>
+        <div class="actions">
+          <button id="toggleLight" class="btn btn-accent">Toggle Light</button>
+          <button id="toggleWater" class="btn">Toggle Water</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Environment</h3>
+        <div class="row"><span>Temperature</span><span id="temp">-- °C</span></div>
+        <div class="row"><span>AQI (est)</span><span id="aqi">--</span></div>
+        <div class="row"><span>Wind</span><span id="wind">--</span></div>
+        <div style="margin-top:8px"><button id="btnWeather" class="btn">Refresh Weather</button></div>
+      </section>
+
+      <section class="card">
+        <h3>Nearby Buses</h3>
+        <ul id="bus-list"></ul> <!-- From new code -->
+        <div id="busList" class="bus-list"><div class="tiny muted">Click "Track Bus" or "Show Buses" to see results.</div></div>
+        <div style="margin-top:8px"><button id="btnShuffle" class="btn">Shuffle ETAs</button></div>
+      </section>
+
+      <section class="card">
+        <h3>Emergency Contacts</h3>
+        <div class="row"><span>Emergency No</span><a href="tel:112" class="small">112</a></div>
+        <div class="row"><span>Local Helpline</span><span class="small">+91-XXXXXXXXXX</span></div>
+      </section>
+    </aside>
+
+    <section class="map-area">
+      <div id="map"></div>
+
+      <div class="map-controls">
+        <button id="clearPOI" class="btn">Clear POIs</button>
+        <button id="fitAll" class="btn">Fit All</button>
+      </div>
+
+      <div class="legend">
+        <div class="item"><span class="dot green"></span> Bus</div>
+        <div class="item"><span class="dot yellow"></span> Shelter</div>
+        <div class="item"><span class="dot red"></span> Police</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

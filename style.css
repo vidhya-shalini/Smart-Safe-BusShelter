@@ -1,0 +1,37 @@
+/* style.css - clean, modern theme for Smart Safe Shelter demo */
+:root{
+  --bg:#071526; --card:#0f1a2b; --muted:#9fb0ff; --accent:#4fe0b3; --danger:#ff6b6b; --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#041024 0%, #071526 100%);color:#e8f3ff}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.03);position:sticky;top:0;z-index:1000;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#39b2ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012}
+.controls{display:flex;gap:8px}
+.btn{background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600}
+.btn-accent{background:linear-gradient(90deg,var(--accent),#7cd8ff);color:#012;border:none}
+.btn-danger{background:linear-gradient(90deg,var(--danger),#ff9aa2);color:#200;border:none}
+.layout{display:grid;grid-template-columns:360px 1fr;gap:14px;padding:14px;height:calc(100vh - 72px)}
+@media (max-width:980px){.layout{grid-template-columns:1fr;height:auto}}
+.sidebar{display:flex;flex-direction:column;gap:12px;overflow:auto;padding-bottom:20px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(0,0,0,0.45)}
+.row{display:flex;align-items:center;justify-content:space-between;margin:6px 0}
+.muted{color:var(--muted);font-size:13px}
+.small{font-size:13px;color:#cfe3ff}
+.progress{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.bar{height:100%;width:60%;background:linear-gradient(90deg,var(--accent),#6fe0ff)}
+.map-area{position:relative}
+#map{width:100%;height:100%;min-height:520px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 14px 40px rgba(3,10,30,0.6)}
+.map-controls{position:absolute;right:14px;top:18px;display:flex;flex-direction:column;gap:8px;z-index:800}
+.legend{position:absolute;left:14px;bottom:18px;z-index:800;background:rgba(5,10,30,0.6);padding:8px;border-radius:8px;font-size:13px;color:#dce9ff}
+.legend .item{display:flex;align-items:center;gap:8px;margin:4px 0}
+.dot{width:12px;height:12px;border-radius:50%;border:2px solid rgba(255,255,255,0.06)}
+.dot.green{background:#7cf3b6}
+.dot.yellow{background:#ffd166}
+.dot.red{background:#ff6b6b}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:#111533;color:#e8f3ff;padding:10px 14px;border-radius:10px;display:none;z-index:2000;border:1px solid rgba(255,255,255,0.04)}
+.toast.show{display:block;animation:pop .22s ease}
+@keyframes pop{from{transform:translate(-50%,12px);opacity:.4}to{transform:translate(-50%,0);opacity:1}}
+.bus-list{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow:auto}
+.bus-item{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+.tiny{font-size:12px;color:#bcd2ff}
